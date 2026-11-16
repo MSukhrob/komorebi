@@ -34,7 +34,7 @@ Production address: **komorebi.uz**
 **Beyond the first version**
 - **In the near future (`/roadmap`):** a public roadmap page. The headline item is connecting streaming accounts (Netflix, Disney+, Prime Video and others) to track what you watch automatically. Most services have no public viewing-history API, so the plan starts with importing the history file you can download from the service, then a browser extension you switch on, then official connections.
 - **Installable:** a web app manifest lets a phone add Komorebi to its home screen and open it like an app.
-- **Presentation (`/presentation`):** a download page for the project presentation (`public/presentation/komorebi-presentation.pptx`, 19 slides with screenshots and speaker notes).
+- **Presentation and guide (`/presentation`):** a download page for the written project guide (`komorebi-project-guide.md`: components, packages, how everything works) and the project presentation (`public/presentation/komorebi-presentation.pptx`, 19 slides with screenshots and speaker notes).
 
 **Design**
 - **Cinema Grade:** a film colourist's palette of deep teal shadows and warm orange highlights, in two themes (light and dark, switched by the sun/moon button; the first visit follows the device).
@@ -166,7 +166,7 @@ deploy/nginx/         nginx site config
 
 These are the choices I made where the spec left room:
 
-- **No anime.** The spec listed anime as a fourth type; it was built (with Kitsu as a second source) and then removed on request. Old anime titles and the list entries pointing at them are deleted by the migration in `server/schema.sql`. TMDB does not label anime separately, so Japanese animation that TMDB returns is shown as a *Cartoon*.
+- **No anime.** The spec listed anime as a fourth type; it was built (with Kitsu as a second source) and then removed on request. Old anime titles and the list entries pointing at them are deleted by the migration in `server/schema.sql`. TMDB does not label anime separately, so Japanese-language animation is recognised by its language and left out of every list, search and recommendation.
 - **No framework, no build step.** The frontend is plain HTML, CSS and ES modules, so every line can be read and explained. The header and footer live once in `public/partials/` and the server pastes them into each page (`server/pages.js`).
 - **Design tokens in one place.** Colours, fonts and the single easing curve `cubic-bezier(0.22, 1, 0.36, 1)` are CSS variables at the top of `komorebi.css`. Dark mode only changes the variables.
 - **Palette:** teal and orange, the classic film colour grade. The orange is only for the main action and the rating; teal is for links and focus. The colours were first compared with the palettes the taste-skill design tool suggests, then chosen for a cinema feel.

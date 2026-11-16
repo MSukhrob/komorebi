@@ -30,6 +30,10 @@ function typeOf(mediaType, genreIds) {
   return mediaType === 'movie' ? 'movie' : 'series';
 }
 
+// Anime is not part of Komorebi: Japanese-language animation is left out of every list and search.
+// (TMDB has no separate anime label, so the language is the signal.)
+const isAnime = (r) => (r.genre_ids || (r.genres || []).map((g) => g.id)).includes(ANIMATION) && (r.original_language === 'ja' || (r.origin_country || []).includes('JP'));
+
 const yearOf = (date) => (date && /^\d{4}/.test(date) ? Number(date.slice(0, 4)) : null);
 const image = (size, path) => (path ? `${IMG}/${size}${path}` : null);
 
@@ -51,6 +55,7 @@ function toSummary(r, mediaType = r.media_type) {
     rating: r.vote_average ? Math.round(r.vote_average * 10) / 10 : null,
     popularity: r.popularity || 0,
     genreIds: r.genre_ids || [],
+    anime: isAnime(r),
   };
 }
 
@@ -78,7 +83,8 @@ function toDetail(d, mediaType) {
   const similar = (d.recommendations?.results || [])
     .filter((r) => r.poster_path)
     .slice(0, 12)
-    .map((r) => toSummary(r, isMovie ? 'movie' : 'tv'));
+    .map((r) => toSummary(r, isMovie ? 'movie' : 'tv'))
+    .filter((i) => !i.anime);
 
   return {
     ...toSummary({ ...d, genre_ids: genreIds }, mediaType),
@@ -104,13 +110,14 @@ function toDetail(d, mediaType) {
   };
 }
 
-const summaries = (data, mediaType) => (data?.results || []).map((r) => toSummary(r, mediaType));
+const summaries = (data, mediaType) => (data?.results || []).map((r) => toSummary(r, mediaType)).filter((i) => !i.anime);
 
 async function search(query) {
   const data = await get('/search/multi', { query, include_adult: 'false', page: '1' });
   return (data?.results || [])
     .filter((r) => r.media_type === 'movie' || r.media_type === 'tv')
-    .map((r) => toSummary(r));
+    .map((r) => toSummary(r))
+    .filter((i) => !i.anime);
 }
 
 async function trending(mediaType) {
