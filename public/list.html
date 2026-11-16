@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My list | Komorebi</title>
+<meta name="description" content="Your movies, series and cartoons: planned, watching and watched.">
+<!-- @head -->
+<script type="module" src="/js/pages/list.js"></script>
+</head>
+<body class="page-list">
+<!-- @header -->
+<main id="main">
+  <div class="wrap page">
+    <div class="page-head">
+      <h1>My list</h1>
+      <p id="list-share"></p>
+      <div class="btn-row"><button class="btn btn-quiet btn-sm" type="button" id="pick">Pick one for me</button></div>
+    </div>
+    <div class="toolbar">
+      <div class="pill-nav" id="tabs" role="group" aria-label="Show by status">
+        <span class="pill" aria-hidden="true"></span>
+        <button type="button" data-status="all" class="is-active" aria-pressed="true">All <span class="count mono"></span></button>
+        <button type="button" data-status="planned" aria-pressed="false">Planned <span class="count mono"></span></button>
+        <button type="button" data-status="watching" aria-pressed="false">Watching <span class="count mono"></span></button>
+        <button type="button" data-status="watched" aria-pressed="false">Watched <span class="count mono"></span></button>
+      </div>
+      <form class="filters" id="filters">
+        <div class="field">
+          <label for="f-type">Type</label>
+          <select id="f-type" name="type">
+            <option value="all">All types</option>
+            <option value="movie">Movies</option>
+            <option value="series">Series</option>
+            <option value="cartoon">Cartoons</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-sort">Sort by</label>
+          <select id="f-sort" name="sort">
+            <option value="added">Date added</option>
+            <option value="rating">Rating</option>
+            <option value="title">Title</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div id="entries" aria-live="polite"></div>
+  </div>
+</main>
+<!-- @footer -->
+</body>
+</html>

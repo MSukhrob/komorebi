@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings | Komorebi</title>
+<meta name="description" content="Choose who can see your Komorebi list.">
+<!-- @head -->
+<script type="module" src="/js/pages/settings.js"></script>
+</head>
+<body class="page-settings">
+<!-- @header -->
+<main id="main">
+  <div class="wrap page narrow">
+    <div class="page-head">
+      <h1>Settings</h1>
+      <p>Choose who can see your list. Your username is always visible, so friends can find you.</p>
+    </div>
+    <div class="stack">
+      <form id="privacy-form" class="panel">
+        <fieldset class="choices">
+          <legend>Who can see my list</legend>
+          <label class="choice">
+            <input type="radio" name="privacy" value="public">
+            <b>Public</b><span>Anyone with the link, even without an account.</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="privacy" value="friends">
+            <b>Friends only</b><span>Only people you have accepted as friends.</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="privacy" value="private">
+            <b>Private</b><span>Only you. Friends will not see your titles either.</span>
+          </label>
+        </fieldset>
+        <div class="btn-row"><button class="btn" type="submit">Save privacy</button></div>
+      </form>
+      <section class="panel" aria-labelledby="export-title">
+        <div class="panel-head">
+          <h2 id="export-title">Your data</h2>
+          <p class="muted">Download your whole list, with ratings, reviews and progress. The CSV opens in Excel and Google Sheets.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-quiet" href="/api/list/export?format=csv" download>Download CSV</a>
+          <a class="btn btn-quiet" href="/api/list/export?format=json" download>Download JSON</a>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="account-title">
+        <h2 id="account-title">Account</h2>
+        <dl class="account-list" id="account-facts"></dl>
+      </section>
+    </div>
+  </div>
+</main>
+<!-- @footer -->
+</body>
+</html>

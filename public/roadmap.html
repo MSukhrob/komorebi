@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>In the near future | Komorebi</title>
+<meta name="description" content="What Komorebi plans to add next: connecting streaming accounts, importing your history, reminders, custom lists and more.">
+<!-- @head -->
+<script type="module" src="/js/pages/roadmap.js"></script>
+</head>
+<body class="page-roadmap">
+<!-- @header -->
+<main id="main">
+  <div class="wrap page">
+    <div class="page-head">
+      <h1>In the near future</h1>
+      <p>Komorebi already tracks, rates and shares what you watch. This is what comes next. The order can change, and good ideas are always welcome.</p>
+    </div>
+
+    <!-- the big one: connecting streaming accounts -->
+    <section class="road-feature" aria-labelledby="connect-h">
+      <div class="road-feature__copy">
+        <span class="road-status road-next">Next up</span>
+        <h2 id="connect-h">Connect your streaming accounts</h2>
+        <p>Link Netflix, Disney+, Prime Video, Apple TV+, Max and other services, and Komorebi adds what you watch to your list by itself. No more typing in episodes by hand.</p>
+        <ul class="chips road-services" aria-label="Services planned">
+          <li class="chip">Netflix</li><li class="chip">Disney+</li><li class="chip">Prime Video</li>
+          <li class="chip">Apple TV+</li><li class="chip">Max</li><li class="chip">Hulu</li><li class="chip">YouTube</li>
+        </ul>
+        <p class="muted road-note">Most streaming services have no public API for viewing history, so the plan starts with what is possible today: importing the viewing-history file you can download from the service (Netflix offers one), then a browser extension you switch on yourself, and official partner connections where a service allows them. You stay in control and can disconnect at any time.</p>
+      </div>
+      <ol class="road-steps" aria-label="How connecting would work">
+        <li><b>Connect</b><span>Choose a service and give your permission.</span></li>
+        <li><b>Match</b><span>Komorebi finds each title in the catalogue and picks the right season and episode.</span></li>
+        <li><b>Review</b><span>You check the suggestions before anything is added.</span></li>
+        <li><b>Stay in sync</b><span>New viewing shows up on your list as Watching or Watched.</span></li>
+      </ol>
+    </section>
+
+    <div id="road" class="road-sections"></div>
+  </div>
+</main>
+<!-- @footer -->
+</body>
+</html>

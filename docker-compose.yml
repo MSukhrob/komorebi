@@ -1,0 +1,17 @@
+# PostgreSQL for Komorebi. Bound to localhost only, on 5433 so it never
+# clashes with anything else on the server.
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: komorebi-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: komorebi
+      POSTGRES_DB: komorebi
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - komorebi-pgdata:/var/lib/postgresql/data
+volumes:
+  komorebi-pgdata:

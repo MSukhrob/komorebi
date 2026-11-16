@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in | Komorebi</title>
+<meta name="description" content="Log in to Komorebi to see your list and what your friends are watching.">
+<!-- @head -->
+<script type="module" src="/js/pages/login.js"></script>
+</head>
+<body class="page-login">
+<!-- @header -->
+<main id="main">
+  <div class="wrap page auth">
+    <section class="auth-card" aria-labelledby="login-title">
+      <div>
+        <h1 id="login-title">Welcome back</h1>
+        <p class="muted">Log in to see your list and what your friends are watching.</p>
+      </div>
+      <form id="login-form" novalidate>
+        <p class="form-alert" role="alert" hidden></p>
+        <div class="field">
+          <label for="login">Username or email</label>
+          <input id="login" name="login" type="text" autocomplete="username" required>
+          <p class="field-error" id="login-error"></p>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <p class="field-error" id="password-error"></p>
+        </div>
+        <button class="btn btn-block" type="submit">Log in</button>
+      </form>
+      <p class="switch">New here? <a href="/register">Create an account</a></p>
+    </section>
+  </div>
+</main>
+<!-- @footer -->
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "about": "Titles that never appear on the home page, the hero or the release radar (they can still be searched and added to a list). Add a TMDB id such as tmdb-movie-123 or tmdb-tv-456 to hide one more. Horror movies are hidden automatically.",
+  "ids": [
+    "tmdb-movie-1400837",
+    "tmdb-tv-291507",
+    "tmdb-movie-1339713",
+    "tmdb-movie-1567605",
+    "tmdb-movie-1538497",
+    "tmdb-movie-1078446",
+    "tmdb-movie-1452168",
+    "tmdb-movie-848700"
+  ]
+}

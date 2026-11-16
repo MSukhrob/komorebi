@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Komorebi: your watch list for movies, series and cartoons</title>
+<meta name="description" content="Track every movie, series and cartoon you watch, see what is new in cinemas, rate it from 1 to 10 and share your list with friends.">
+<meta property="og:title" content="Komorebi: your watch list for movies, series and cartoons">
+<meta property="og:description" content="Track what you watch, follow new releases and film news, and share your list with friends.">
+<meta property="og:type" content="website">
+<!-- @head -->
+<script type="module" src="/js/pages/index.js"></script>
+</head>
+<body class="page-home">
+<!-- @header -->
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg"><img id="hero-img" alt=""></div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy" id="hero-copy">
+        <h1 id="hero-title">Track what you watch. Share it with friends.</h1>
+        <p class="overview">One list for every movie, series and cartoon, with your rating, your episode and your review.</p>
+        <div class="btn-row"><a class="btn" href="/register">Create a free account</a><a class="btn btn-glass" href="/browse">Browse by genre</a></div>
+      </div>
+      <div class="hero-picks" id="hero-picks" role="group" aria-label="Featured titles"></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <form class="searchbar" role="search" id="search-form">
+      <label class="visually-hidden" for="q">Search movies, series and cartoons</label>
+      <svg class="icon icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" name="q" placeholder="Search a title, e.g. Coco" autocomplete="off" maxlength="100">
+      <svg class="icon icon-leaf" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M30 6C19 6 12 13 12 24c0 1.5.2 2.6.5 3.5C24 27 30 19 30 6Z"/></svg>
+    </form>
+    <div class="pill-nav type-pills" role="group" aria-label="Show">
+      <span class="pill" aria-hidden="true"></span>
+      <button type="button" data-type="all" class="is-active" aria-pressed="true">All</button>
+      <button type="button" data-type="movie" aria-pressed="false">Movies</button>
+      <button type="button" data-type="series" aria-pressed="false">Series</button>
+      <button type="button" data-type="cartoon" aria-pressed="false">Cartoons</button>
+    </div>
+
+    <div id="results" aria-live="polite" hidden></div>
+    <div class="home-sections" id="sections" data-filter="all"></div>
+  </div>
+</main>
+<!-- @footer -->
+</body>
+</html>

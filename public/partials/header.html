@@ -1,0 +1,57 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="orbs" aria-hidden="true"><span></span><span></span></div>
+
+<!-- the floating island (desktop) -->
+<div class="island-bar">
+  <header class="island" id="island">
+    <a class="brand" href="/" aria-label="Komorebi, home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="13" cy="13" r="9" fill="var(--accent)"/><path d="M30 6C19 6 12 13 12 24c0 1.5.2 2.6.5 3.5C24 27 30 19 30 6Z" fill="var(--teal)"/><path d="M13.5 26.5C17 19 21.5 13.5 27 9.5" stroke="var(--bg)" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+      <span class="brand-name">Komorebi</span>
+    </a>
+    <nav class="main-nav pill-nav" aria-label="Main">
+      <span class="pill" aria-hidden="true"></span>
+      <a href="/" data-nav="discover">Home</a>
+      <a href="/browse" data-nav="browse">Browse</a>
+      <a href="/list" data-nav="list">My list</a>
+      <a href="/stats" data-nav="stats">Stats</a>
+      <a href="/friends" data-nav="friends">Friends <span class="badge-dot" data-friends-badge hidden></span></a>
+    </nav>
+    <button class="icon-btn search-open" type="button" aria-label="Search titles" aria-keyshortcuts="/ Control+K">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <span class="search-label">Search</span><kbd aria-hidden="true">/</kbd>
+    </button>
+    <button class="icon-btn theme-toggle" type="button" aria-label="Switch to the dark theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <mask id="moon-cut"><rect width="24" height="24" fill="#fff"/><circle class="moon-cut" cx="30" cy="2" r="7" fill="#000"/></mask>
+        <circle class="sun-body" cx="12" cy="12" r="5" fill="currentColor" mask="url(#moon-cut)"/>
+        <g class="sun-rays" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5"/>
+        </g>
+      </svg>
+    </button>
+    <div class="account" data-account>
+      <a class="btn btn-quiet btn-sm" href="/login">Log in</a>
+      <a class="btn btn-sm" href="/register">Create account</a>
+    </div>
+  </header>
+</div>
+
+<!-- the dock (phones) -->
+<nav class="dock" aria-label="Main">
+  <span class="pill" aria-hidden="true"></span>
+  <a href="/" data-nav="discover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a>
+  <a href="/browse" data-nav="browse"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>Browse</a>
+  <a href="/list" data-nav="list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h12v17l-6-4-6 4z"/></svg>My list</a>
+  <a href="/friends" data-nav="friends"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.7a3.5 3.5 0 0 1 0 6.6M18 14.8c2 .6 3.2 2.3 3.5 5.2"/></svg>Friends<span class="badge-dot dock-badge" data-friends-badge hidden></span></a>
+  <a href="/login" data-nav="me" data-me><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c.8-4 3.7-6 7.5-6s6.7 2 7.5 6"/></svg><span data-me-label>Log in</span></a>
+</nav>
+
+<!-- the search window: opens with the / key or Ctrl+K -->
+<dialog class="search-dialog" id="search-dialog" aria-label="Search titles">
+  <form class="sd-form" role="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="sd-input" type="search" placeholder="Search movies, series and cartoons" autocomplete="off" maxlength="100" aria-label="Search titles">
+    <kbd aria-hidden="true">Esc</kbd>
+  </form>
+  <ul class="sd-results" id="sd-results" aria-live="polite"><li class="sd-hint">Type at least two letters. Use the arrow keys and Enter to open a title.</li></ul>
+</dialog>

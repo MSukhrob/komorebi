@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Browse | Komorebi</title>
+<meta name="description" content="Browse movies, series and cartoons by genre, sorted by popularity, rating or release date.">
+<!-- @head -->
+<script type="module" src="/js/pages/browse.js"></script>
+</head>
+<body class="page-browse">
+<!-- @header -->
+<main id="main">
+  <div class="wrap page">
+    <div class="page-head">
+      <h1>Browse</h1>
+      <p>Find something new by type and genre.</p>
+    </div>
+    <div class="browse-bar">
+      <div class="toolbar">
+        <div class="pill-nav" id="type-tabs" role="group" aria-label="Type">
+          <span class="pill" aria-hidden="true"></span>
+          <button type="button" data-type="movie" class="is-active" aria-pressed="true">Movies</button>
+          <button type="button" data-type="series" aria-pressed="false">Series</button>
+          <button type="button" data-type="cartoon" aria-pressed="false">Cartoons</button>
+        </div>
+        <div class="filters">
+          <div class="field">
+            <label for="sort">Sort by</label>
+            <select id="sort">
+              <option value="popular">Most popular</option>
+              <option value="rating">Top rated</option>
+              <option value="newest">Newest</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="chips chips-scroll" id="genres" role="group" aria-label="Genre"></div>
+    </div>
+    <div id="grid" aria-live="polite"></div>
+    <div class="more"><button class="btn btn-quiet" type="button" id="more" hidden>Load more</button></div>
+  </div>
+</main>
+<!-- @footer -->
+</body>
+</html>

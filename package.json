@@ -1,0 +1,27 @@
+{
+  "name": "komorebi",
+  "version": "1.0.0",
+  "description": "Keep track of everything you watch and share it with friends.",
+  "private": true,
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "migrate": "node server/migrate.js",
+    "seed": "node scripts/seed.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.4",
+    "express-session": "^1.19.0",
+    "fast-xml-parser": "^5.12.1",
+    "helmet": "^8.3.0",
+    "pg": "^8.23.1"
+  }
+}

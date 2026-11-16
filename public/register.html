@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create an account | Komorebi</title>
+<meta name="description" content="Create a free Komorebi account to track what you watch and share it with friends.">
+<!-- @head -->
+<script type="module" src="/js/pages/register.js"></script>
+</head>
+<body class="page-register">
+<!-- @header -->
+<main id="main">
+  <div class="wrap page auth">
+    <section class="auth-card" aria-labelledby="register-title">
+      <div>
+        <h1 id="register-title">Create your account</h1>
+        <p class="muted">Keep every movie, series and cartoon in one calm place.</p>
+      </div>
+      <form id="register-form" novalidate>
+        <p class="form-alert" role="alert" hidden></p>
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" autocomplete="username" required minlength="3" maxlength="30" pattern="[A-Za-z0-9_]{3,30}" aria-describedby="username-hint">
+          <p class="hint" id="username-hint">3–30 letters, numbers or underscores. Your profile link uses it.</p>
+          <p class="field-error" id="username-error"></p>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required maxlength="254">
+          <p class="field-error" id="email-error"></p>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="72" aria-describedby="password-hint">
+          <p class="hint" id="password-hint">At least 8 characters.</p>
+          <p class="field-error" id="password-error"></p>
+        </div>
+        <button class="btn btn-block" type="submit">Create account</button>
+      </form>
+      <p class="switch">Already have an account? <a href="/login">Log in</a></p>
+    </section>
+  </div>
+</main>
+<!-- @footer -->
+</body>
+</html>

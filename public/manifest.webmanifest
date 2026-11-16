@@ -1,0 +1,13 @@
+{
+  "name": "Komorebi",
+  "short_name": "Komorebi",
+  "description": "Track what you watch and share it with friends.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#071012",
+  "theme_color": "#071012",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

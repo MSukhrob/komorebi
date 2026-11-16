@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Friends | Komorebi</title>
+<meta name="description" content="Find people, answer friend requests and see your friends.">
+<!-- @head -->
+<script type="module" src="/js/pages/friends.js"></script>
+</head>
+<body class="page-friends">
+<!-- @header -->
+<main id="main">
+  <div class="wrap page">
+    <div class="page-head">
+      <h1>Friends</h1>
+      <p>Friends can see lists set to “Friends only”. A friendship starts when a request is accepted.</p>
+    </div>
+    <div class="cols" id="friends-layout">
+      <div class="stack">
+        <section class="panel" aria-labelledby="incoming-title">
+          <h2 id="incoming-title">Requests for you</h2>
+          <div id="incoming"></div>
+        </section>
+        <section class="panel" aria-labelledby="friends-title">
+          <h2 id="friends-title">My friends</h2>
+          <div id="friends"></div>
+        </section>
+        <section class="panel" aria-labelledby="outgoing-title">
+          <h2 id="outgoing-title">Requests you sent</h2>
+          <div id="outgoing"></div>
+        </section>
+      </div>
+      <section class="panel" aria-labelledby="find-title">
+        <h2 id="find-title">Find people</h2>
+        <form id="people-form" role="search">
+          <div class="field">
+            <label for="people-q">Username</label>
+            <input id="people-q" type="search" name="q" autocomplete="off" maxlength="30" placeholder="At least two letters">
+          </div>
+        </form>
+        <div id="people" aria-live="polite"></div>
+      </section>
+    </div>
+  </div>
+</main>
+<!-- @footer -->
+</body>
+</html>
